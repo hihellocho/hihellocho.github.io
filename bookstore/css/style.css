@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/****** COMMON 공통으로 들어갈 것 묶음******/
+.border-box{
+  border: 1px solid #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 2px 4px;
+  margin: 0 2px;
+}
+.r-border{
+  border-right: 1px solid #aaa;
+  padding: 2px;
+}
+.text-red{
+  color: tomato;
+}
+.text-big{
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.text-w{
+  font-weight: bolder;
+}
+.rect-redius{
+  border-radius: 20px;
+  border: 1px solid tomato;
+  padding: 2px;
+  text-align: center;
+}
+
+
+main{
+  width: 1200px;   /* %로 지정하면 반응형. pc형은 딱 정해주면 됨(기본은 1000인데, 컴마다 해상도가 달라서 1200까지는 봐가면서) */
+  display: flex;
+  gap: 5rem;
+  margin: 50px auto;
+}
+
+section#book{
+  width: 35%;
+  /* background-color: tan; */
+  perspective: 1200px;
+}
+section#book > .book{
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 88%;
+  transition: all 0.5s;
+  /* transform: rotateY(45deg); */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* .book:hover{ */
+.book:not(.flipped):hover{
+  transform: rotateY(40deg);
+  cursor: url(../assets/images/cursor.png), auto;
+}
+.flipped{
+  transform: rotateY(180deg);
+  cursor: url(../assets/images/cursor.png), auto;
+}
+
+.book > .page{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.book > .page > div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateZ(25px);
+  backface-visibility: hidden;
+}
+.front, .back, .side{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.book > .page > .front{
+  background-color: tomato;
+  background-image: url(../assets/images/front.jfif);
+  background-size: cover;
+}
+.book > .page > .back{
+  background-color: teal;
+  background-image: url(../assets/images/back.jfif);
+  background-size: cover;
+  transform: rotateY(180deg) translateZ(25px);  /* 오버라이트 안되게 같이 써줌*/
+}
+.book > .side{
+  left: -25px;
+  width: 50px;
+  height: 100%;
+  background-color: dodgerblue;
+  background-image: url(../assets/images/side.jfif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotateY(-90deg);
+}
+/* detail style */
+section#detail{
+  width: 60%;
+}
+section#detail > div{
+  padding: 10px 0;
+  border-bottom: 1px solid #aaa;
+}
+section#detail > .one > div{
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+section#detail > .one > div > p{
+  padding: 0 6px;
+}
+
+section#detail > .two > div{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 10px 0;
+}
+section#detail > .two > div > p:nth-child(1){
+  width: 120px;
+}
+section#detail > .two > div > p > span{
+  display: inline-block;
+}
+.del{
+  background-color: rgb(214, 245, 255);
+  padding: 20px;
+}
+.del > span{
+  display: inline-block;
+}
+.del > span:nth-child(1){
+  background-color: yellowgreen;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
