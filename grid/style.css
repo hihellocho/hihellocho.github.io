@@ -5,15 +5,29 @@ body{
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
+  perspective: 900px;
+  background-color: #222;
+}
+input{
+  display: none;
+}
+input[id=check-icon]:checked ~ nav{
+  transform: rotateY(15deg);
+  opacity: 1;
+}
+input[id=check-icon]:checked ~ main{
+  transform: rotateY(-10deg);
+  transition: all 0.5s;
 }
 #menu-icon{
-  position: fixed;
-  z-index: 10;
+  position: fixed; /** 포지션 값 고정 **/
+  z-index: 10; /** 맨 위로 올라오게 하려고 z-index **/
   top: 30px;
   left: 30px;
   font-size: 2rem;
   color: white;
   animation: icon-move 0.5s infinite alternate;
+  cursor: pointer;
 }
 @keyframes icon-move {
   0%{
@@ -23,10 +37,51 @@ body{
     transform: scale(1.5);
   }
 }
+/******** nav ********/
+input[id=menu1]:checked ~ main > #box1,
+input[id=menu2]:checked ~ main > #box2,
+input[id=menu3]:checked ~ main > #box3{
+  opacity: 1;
+}
+input[id=menu1]:checked ~ main > #box1 > p,
+input[id=menu2]:checked ~ main > #box2 > p,
+input[id=menu3]:checked ~ main > #box3 > p{
+  transform: rotateY(0deg);
+}
+nav{
+  width: 150px;
+  height: 100%;
+  position: absolute;
+  background-color: #ddd;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform: rotateY(120deg);
+  transform-origin: left center;
+  opacity: 0;
+  transition: all 0.5s;
+}
+nav > img{
+  display: block;
+  width: 60%;
+  margin: 7rem auto;
+}
+nav > ul > li{
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+nav > ul > li > label{
+  cursor: pointer;
+}
 /******** main영역 ********/
 main{
   height: 100%;
   position: relative;
+  transform: rotateY(0deg);
+  transform-origin: right center;
+  transition: all 0.5s;
 }
 main > section{
   width: 100%;
@@ -35,6 +90,7 @@ main > section{
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
 }
 
 main > section > p{
@@ -48,12 +104,15 @@ main > section > p{
   background-repeat: no-repeat;
   background-position: center;
   background-color: #333;
+  transform: rotateY(180deg);
+  transition: all 0.5s;
 }
 
 /* section#box1 > p{
   border: 1px solid red;
 } */
 section#box1{
+  z-index: 1;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: repeat(4,1fr);
 }
@@ -69,7 +128,7 @@ section#box1 > p:nth-child(4){
 background-color: #666;
 }
 section#box1 > p:nth-child(5){
-  background-image: url(images/m3.jpg);
+  background-image: url(./images/m3.jpg);
   background-size: contain;
   background-position: left center;
 }
@@ -78,14 +137,14 @@ section#box1 > p:nth-child(6){
   /* grid-column: 3 / span 2; */
   grid-row: 2 / 4;
   /* grid-row: 2 / span 2; */
-  background-image: url(images/m2.jpg);
+  background-image: url(./images/m2.jpg);
 }
 section#box1 > p:nth-child(7){
-  background-image: url(images/m4.jpg);
+  background-image: url(./images/m4.jpg);
 }
 section#box1 > p:nth-child(10){
   grid-column: 2 / 4;
-  background-image: url(images/m5.jpg);
+  background-image: url(./images/m5.jpg);
 }
 
 
@@ -98,7 +157,7 @@ section#box2{
   border: 1px solid red;
 } */
 section#box2 > p:nth-child(2){
-  background-image: url(images/w1.jpg);
+  background-image: url(./images/w1.jpg);
 }
 section#box2 > p:nth-child(3){
   grid-column: 3 / 5;
@@ -106,26 +165,26 @@ section#box2 > p:nth-child(3){
 }
 section#box2 > p:nth-child(4){
   grid-row: 2 / 4;
-  background-image: url(images/w2.jpg);
+  background-image: url(./images/w2.jpg);
 }
 section#box2 > p:nth-child(5){
   grid-column: 2 / 4;
   grid-row: 2 /4 ;
-  background-image: url(images/w3.jpg);
+  background-image: url(./images/w3.jpg);
 }
 section#box2 > p:nth-child(6){
-  background-image: url(images/w4.jpg);
+  background-image: url(./images/w4.jpg);
   background-size: contain;
   background-position: center;
 }
 section#box2 > p:nth-child(8){
-  background-image: url(images/w5.jpg);
+  background-image: url(./images/w5.jpg);
 }
 section#box2 > p:nth-child(10){
-  background-image: url(images/w6.jpg);
+  background-image: url(./images/w6.jpg);
 }
 section#box2 > p:nth-child(11){
-  background-image: url(images/w7.jpg);
+  background-image: url(./images/w7.jpg);
 }
 
 
@@ -142,7 +201,7 @@ section#box3{
 }
 section#box3 > P:nth-child(1){
   grid-area: kid1;
-  background-image: url(images/k1.jpg);
+  background-image: url(./images/k1.jpg);
 }
 section#box3 > P:nth-child(2){
   grid-area: txt1;
@@ -150,7 +209,7 @@ section#box3 > P:nth-child(2){
 }
 section#box3 > P:nth-child(3){
   grid-area: kid2;
-  background-image: url(images/k2.jpg);
+  background-image: url(./images/k2.jpg);
 }
 section#box3 > P:nth-child(4){
   grid-area: txt2;
@@ -158,7 +217,7 @@ section#box3 > P:nth-child(4){
 }
 section#box3 > P:nth-child(5){
   grid-area: kid3;
-  background-image: url(images/k3.jpg);
+  background-image: url(./images/k3.jpg);
 }
 section#box3 > P:nth-child(6){
   grid-area: txt3;
@@ -166,5 +225,5 @@ section#box3 > P:nth-child(6){
 }
 section#box3 > P:nth-child(7){
   grid-area: kid4;
-  background-image: url(images/k4.jpg);
+  background-image: url(./images/k4.jpg);
 }
