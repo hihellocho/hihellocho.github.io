@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/aboutme.css" />
+    <title>about me 실습</title>
+  </head>
+  <body>
+    <main>
+      <h1>ABOUT ME</h1>
+      <nav class="nav">
+        <div class="btn-menu">
+          <button data-index="1" class="active">01</button>
+          <button data-index="2">02</button>
+          <button data-index="3">03</button>
+        </div>
+      </nav>
+      <div class="container">
+        <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="section-wrap">
+          <section class="page-1">
+              <div class="slider">
+                <div class="main-text">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <h2>About me</h2>
+                  <p>
+                    다양한 경험치와<br />공감능력을 지닌 디자이너<br />KIM CHO
+                    RONG<br />입니다.
+                  </p>
+                  <div class="icon">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                  </div>
+                </div>
+                <div class="sub-text">
+                  <div>
+                    <h3>EDUCAITON</h3>
+                    <p>2005<br />University</p>
+                    <p>2010<br />Design school</p>
+                  </div>
+                  <div>
+                    <h3>WORK</h3>
+                    <p>2010 ~ 2015<br />Design company1</p>
+                    <p>2015 ~ 2025<br />Design company2</p>
+                  </div>
+                  <div>
+                    <h3>CHARACTER</h3>
+                    <p>MBTI<br />ISFJ : 수호자</p>
+                    <p>열정적이고 겸손한 태도로 업무와 사람을 대합니다.</p>
+                  </div>
+                </div>
+              </div>
+          </section>
+
+          <section class="page-2">
+              <div class="slider">
+                <div class="main-text">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <h2>Favorite</h2>
+                  <ul class="p">
+                    <li>COLOR_ Blue</li>
+                    <li>MUSIC_ HIP-HOP, Ballad,<br />Acoustic</li>
+                    <li>TRAVLE</li>
+                    <li>CUTE CHARICTER</li>
+                    <li>ART EXHIBITION</li>
+                    <li>UNIVERSE</li>
+                    <li>VINTAGE PICTURE IMAGES</li>
+                  </ul>
+                </div>
+                <div class="sub-text">
+                  <div class="img">
+                    <img src="./images/img-01.jpg" alt="이미지1" />
+                    <img src="./images/img-02.jpg" alt="이미지2" />
+                    <img src="./images/img-03.jpg" alt="이미지3" />
+                  </div>
+                </div>
+              </div>
+          </section>
+
+          <section class="page-3">
+              <div class="slider">
+                <div class="main-text">
+                  <div class="quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                  </div>
+                  <h2>Skills</h2>
+                  <ul class="p">
+                    <li>Photoshop</li>
+                    <li>Illustratiorc</li>
+                    <li>Indesign</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>ect...</li>
+                  </ul>
+                </div>
+                <div class="sub-text">
+                  <div class="program">
+                    <h3>Program</h3>
+                    <img src="./images/img-04.png" alt="스킬이미지" />
+                  </div>
+                  <div class="license">
+                    <h3>License</h3>
+                    <p>popupbook Design</p>
+                  </div>
+                  <div class="awards">
+                    <h3>Awards</h3>
+                    <p>2025 | 수원 화성행궁 디자인 수상</p>
+                  </div>
+                </div>
+              </div>
+          </section>
+        </div>
+        <button class="next"><i class="fa-solid fa-angle-right"></i></button>
+      </div>
+    </main>
+    <script src="./aboutme.js"></script>
+  </body>
+</html>

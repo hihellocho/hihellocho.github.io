@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+body {
+  background-color: #001f86;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 메인 - 바탕 */
+main{
+  margin: 160px auto;
+  width: 90%;
+  height: 75%;
+  background-color: #eee;
+  position: relative;
+}
+main > .nav{
+  margin-top: 3rem;
+}
+main > h1{
+  font-size: 8rem;
+  font-weight: 800;
+  color: #eee;
+  position: absolute;
+  top: -125px;
+}
+main > .nav > .btn-menu{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16rem; 
+}
+main > .nav > .btn-menu > button{
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main > .nav > .btn-menu > button.active{
+  background-color: #ddd;
+}
+
+main > div.container{
+  display: flex;
+  justify-content: space-around;
+}
+/* 다음 이전 버튼 */
+main > div.container > button.prev,
+main > div.container > button.next{
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+  background-color: transparent;
+}
+
+/* 섹션 전체 감싸는*/
+div.section-wrap{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 1318px;
+  overflow: hidden;
+
+}
+
+
+/* 슬라이드 section-1 */
+section.page-1{
+  display: flex;
+  /* display: none; */
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+section.page-1  > .slider,
+section.page-2  > .slider,
+section.page-3  > .slider{
+width: 1318px;
+height: 480px;
+display: flex;
+justify-content: space-between;
+/* border: 1px solid #222; */
+padding:0 2rem;
+}
+
+section.page-1 > .slider > .main-text{
+  width: 350px;
+  padding-left: 0.6rem;
+  margin-top: 3.2rem;
+}
+section.page-2 > .slider > .main-text,
+section.page-3 > .slider > .main-text{
+  width: 350px;
+  padding-left: 2rem;
+  margin-top: 3.2rem;
+}
+
+section.page-1 > .slider > .main-text> h2,
+section.page-2 > .slider > .main-text> h2,
+section.page-3 > .slider > .main-text> h2{
+  font-size: 4rem;
+  margin-top: 2rem;
+}
+section.page-1 > .slider > .main-text> .quote,
+section.page-2 > .slider > .main-text> .quote,
+section.page-3 > .slider > .main-text> .quote{
+  background-color: #222;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.page-1 > .slider > .main-text> .quote > i,
+section.page-2 > .slider > .main-text> .quote > i,
+section.page-3 > .slider > .main-text> .quote > i{
+color: #eee;
+font-size: 1.3rem;
+}
+section.page-1 > .slider > .main-text > p{
+  line-height: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+section.page-1 > .slider > .main-text > .icon > a{
+font-size: 1.6rem;
+padding-right: 1.5rem;
+}
+
+/* 서브텍스트 */
+section.page-1 > .slider > .sub-text{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 1.5rem;
+}
+section.page-1 > .slider > .sub-text > div{
+  width: 250px;
+}
+section.page-1 > .slider > .sub-text > div > h3{
+  background-color: #001f86;
+  border-radius: 1rem;
+  color: #eee;
+  padding: 0.5rem 1.2rem;
+  font-weight: 400;
+}
+section.page-1 > .slider > .sub-text > div > p{
+  padding: 1rem;
+}
+
+
+/* 슬라이드 section-2 */
+section.page-2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+
+section.page-2 > .slider > .main-text > ul > li,
+section.page-3 > .slider > .main-text > ul > li{
+  line-height: 1.8rem;
+  font-size: 1rem;
+}
+section.page-2 > .slider > .sub-text{
+  display: flex;
+  align-items: center;
+  /* gap: 4rem; */
+  margin-right: 1.5rem;
+}
+section.page-2 > .slider > .sub-text > div.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 5rem;
+}
+
+
+/* 슬라이드 section.page-3 */
+section.page-3{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+section.page-3 > .slider > .sub-text > .program,
+section.page-3 > .slider > .sub-text > .license,
+section.page-3 > .slider > .sub-text > .awards{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+  width: 900px;
+  margin: 5rem 0;
+  margin-left: 5rem;
+  padding: 0 1rem;
+}
