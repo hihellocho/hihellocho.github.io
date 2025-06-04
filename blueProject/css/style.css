@@ -9,11 +9,11 @@ html{
   /*폰트사이즈를 기본10px로 설정 - (10px로/ 기본16px)x100 */
   /* font-size: 62.5%; */
   font-size: 0.98vw;  /* 10px기본 폰트 가변처리할때 (10/1024)x100 */
-  behavior: smooth;
+  scroll-behavior: smooth;
 }
 body{
   background-color: #eee;
-  overflow-x: hidden;     /* 가로스크롤 안생기게 함*/
+  overflow-x: hidden;
 }
 /* logo */
 #logo{
@@ -151,7 +151,6 @@ header > h1:before{
 article{
   width: 100%;
   height: 100vh;
-  border: 2px dashed red;
 }
 
 /* bout me  - #info ******************/
@@ -246,7 +245,7 @@ align-items: center;
 }
 
 
-/* Projects *****************/
+/* #Project - projects-wrap nomal(1,2) *****************/
 .project-wrap{
   width: 90%;
   margin: 0 auto;
@@ -293,7 +292,11 @@ align-items: center;
   display: flex;
   gap: 1rem;
 }
+.item-list > .item > .btn > p:hover{
+  filter:brightness(70%)
+}
 .item-list > .item > .btn > p{
+  cursor: pointer;
   flex: 1;
   background-color: var(--main-color);
   color: var(--sub-color);
@@ -323,4 +326,115 @@ align-items: center;
   border-radius: 2rem;
   border: 1px solid var(--main-color);
   padding: 3px 10px;
+}
+
+/* #Project - projects-wrap practice(3) *****************/
+article.practice{
+  padding: 5rem 0;
+  height: auto;
+}
+.practice > .item-list{
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* skills *****************/
+section#skills{
+  height: 100vh;
+  position: relative;
+}
+#skills h2{
+  font-size: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#skills > .skill-item > li{
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+#skills > .skill-item > li:hover{
+  filter: brightness(80%);
+}
+
+.shape1, .shape8, .shape10{border-radius: 50%; transform: rotate(8deg)}
+.shape2, .shape7{border-radius: 20px; transform: rotate(20deg);}
+.shape3, .shape6{clip-path: circle(40%);}
+.shape4, .shape11{clip-path: ellipse(60% 40% at 50% 50%);  transform: rotate(-10deg)}
+.shape5, .shape13{clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);}
+/* background */
+.shape1, .shape4, .shape9 {background-color: #0044ff;}
+.shape7 {background-color: #7439ff;}
+.shape3, .shape8, .shape11 {background-color: #c851ff;}
+.shape2, .shape6 {background-color: #30DEF4;}
+.shape5, .shape10, .shape13 {background-color: #6dff81;}
+.shape12 {background-color: #00fcc5;}
+/* skill position */
+.shape1{top:28%; left:45%;}
+.shape2{top:17%; left:78%;}
+.shape3{top:30%; left:68%;}
+.shape4{top:75%; left:70%;}
+.shape5{top:40%; left:8%;}
+.shape6{top:68%; left:32%;}
+.shape7{top:65%; left:45%;}
+.shape8{top:10%; left:15%;}
+.shape9{top:72%; left:12%;}
+.shape10{top:5%; left:58%;}
+.shape11{top:57%; left:20%;}
+.shape12{top:10%; left:35%;}
+.shape13{top:53%; left:80%;}
+
+/* footer *****************/
+footer{ 
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer > .container{
+  width: 97%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 3rem;
+  color: var(--sub-color);
+}
+.fot-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.fot-wrap > h2{
+  font-size: 8rem;
+}
+.fot-wrap > p{
+  font-size: 2rem;
+}
+
+.fot-wrap > ul > li:hover{
+  filter:brightness(80%);
+}
+.fot-wrap > ul > li{
+  color: var(--main-color);
+  background-color: var(--sub-color);
+  display: inline-block;
+  border-radius: 3rem;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  font-weight: bolder;
+  cursor: pointer;
+  margin-right: 1rem;
 }
