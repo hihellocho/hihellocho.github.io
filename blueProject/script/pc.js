@@ -1,5 +1,5 @@
-gsap.registerPlugin(ScrollTrigger);
-
+// gsap.registerPlugin(ScrollTrigger);  common.js에 넣어주면 pc, mobile 다 실행됨
+(function(){
 // header 영역의 title이 오른쪽에서 왼쪽으로 이동
 const $headerMsg = document.querySelectorAll("header .title li");
 gsap.from($headerMsg, {
@@ -164,3 +164,5 @@ $home.addEventListener("click",()=>{
     top:0
   });
 });
+
+})();
